@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asjad Pathan | Code Universe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+    <div class="loader-text">Loading Universe...</div>
+</div>
+
+<!-- Background Elements -->
+<div class="stars"></div>
+<div class="planet earth"></div>
+<div class="planet mars"></div>
+<div class="astronaut">👨‍🚀</div>
+
+<header>
+    <h1 class="typing"></h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeToggle">🌙</button>
+</header>
+
+<section id="about" class="glass reveal">
+    <h2>About Me</h2>
+    <p>I am Asjad Pathan, a passionate Python developer exploring the infinite universe of software engineering and building real-world systems.</p>
+</section>
+
+<section id="skills" class="glass reveal">
+    <h2>Skills</h2>
+
+    <div class="skill">
+        <p>Python</p>
+        <div class="progress"><div class="bar" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Flask</p>
+        <div class="progress"><div class="bar" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="progress"><div class="bar" data-width="75%"></div></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="reveal">Projects</h2>
+
+    <div class="project-card glass reveal">
+        <h3>Real Estate Management System</h3>
+        <p>A full-stack property listing and management system built using Flask.</p>
+    </div>
+
+    <div class="project-card glass reveal">
+        <h3>Student Python Utility Library</h3>
+        <p>A custom-built Python toolkit to help college students automate tasks.</p>
+    </div>
+</section>
+
+<section id="contact" class="glass reveal">
+    <h2>Contact / Feedback</h2>
+
+    <form id="feedbackForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Feedback"></textarea>
+        <button type="submit">Launch Message 🚀</button>
+    </form>
+
+    <div id="successPopup"></div>
+    <div id="feedbackList"></div>
+</section>
+
+<audio id="spaceMusic" loop>
+    <source src="space.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" class="music-btn">🔊 Sound</button>
+
+<footer>
+    <p>© 2026 Asjad Pathan | Exploring the Code Galaxy</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
