@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded",function(){
     const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:innerWidth>700,powerPreference:"high-performance"});
     renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<700?1.35:1.8));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);
     renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
-    const root=new THREE.Group();scene.add(root);
-    const key=new THREE.PointLight(0xff6745,95,18);key.position.set(3,3,4);scene.add(key);
-    const cyan=new THREE.PointLight(0xe8bd86,75,16);cyan.position.set(-4,-2,2);scene.add(cyan);
+    const root=new THREE.Group();scene.add(root);const isMobile=innerWidth<700;if(isMobile){root.scale.setScalar(.68);root.position.x=.82;root.position.y=.12;}
+    const key=new THREE.PointLight(0xffa06d,52,18);key.position.set(3,3,4);scene.add(key);
+    const cyan=new THREE.PointLight(0xf1d2a7,42,16);cyan.position.set(-4,-2,2);scene.add(cyan);
     const white=new THREE.PointLight(0xffffff,30,14);white.position.set(0,4,-3);scene.add(white);
     scene.add(new THREE.AmbientLight(0x9b7860,.55));
     const coreGeo=new THREE.TorusKnotGeometry(1.42,.39,220,28,2,5);
-    const coreMat=new THREE.MeshPhysicalMaterial({color:0xff7951,metalness:.82,roughness:.19,clearcoat:1,clearcoatRoughness:.08,iridescence:.75,iridescenceIOR:1.8,iridescenceThicknessRange:[100,700],emissive:0x45190d,emissiveIntensity:.32});
+    const coreMat=new THREE.MeshPhysicalMaterial({color:0xc98759,metalness:.78,roughness:.27,clearcoat:1,clearcoatRoughness:.13,iridescence:.42,iridescenceIOR:1.8,iridescenceThicknessRange:[100,700],emissive:0x35170d,emissiveIntensity:.16});
     const core=new THREE.Mesh(coreGeo,coreMat);root.add(core);
     const inner=new THREE.Mesh(new THREE.IcosahedronGeometry(.72,2),new THREE.MeshPhysicalMaterial({color:0xffd7aa,metalness:.48,roughness:.12,transmission:.35,thickness:1.4,transparent:true,opacity:.9,emissive:0x60351d,emissiveIntensity:.35,wireframe:false}));root.add(inner);
     const wire=new THREE.Mesh(new THREE.IcosahedronGeometry(2.18,2),new THREE.MeshBasicMaterial({color:0xff7951,wireframe:true,transparent:true,opacity:.16}));root.add(wire);
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded",function(){
     const clock=new THREE.Clock();
     renderer.setAnimationLoop(()=>{
       const t=clock.getElapsedTime();mouseX+=(targetX-mouseX)*.035;mouseY+=(targetY-mouseY)*.035;
-      root.rotation.y=t*.12+mouseX;root.rotation.x=Math.sin(t*.22)*.12+mouseY*.35;root.position.y=Math.sin(t*.55)*.12-scroll*.5;
+      root.rotation.y=t*.12+mouseX;root.rotation.x=Math.sin(t*.22)*.12+mouseY*.35;root.position.y=(isMobile?.12:0)+Math.sin(t*.55)*.12-scroll*.5;
       core.rotation.x=t*.18;core.rotation.z=t*.13;inner.rotation.y=-t*.22;inner.rotation.x=t*.17;wire.rotation.y=-t*.07;wire.rotation.x=t*.05;
       rings.forEach((r,n)=>{r.rotation.z+=.0015*(n+1);r.rotation.x+=.0008;});
       particles.rotation.y=t*.012;particles.rotation.x=Math.sin(t*.08)*.04;stars.rotation.y=-t*.025;
