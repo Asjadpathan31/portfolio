@@ -151,3 +151,26 @@ body:before{background:radial-gradient(ellipse at 78% 25%,rgba(239,89,49,.16),tr
 .site-nav.open{background:rgba(23,17,14,.97);backdrop-filter:blur(22px)}
 @media(max-width:680px){.site-nav{background:rgba(23,17,14,.97);border-bottom-color:rgba(255,225,195,.16)}}
 .hero-art:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 60% 48%,rgba(255,130,75,.08),transparent 42%)}
+
+
+/* MOBILE HERO — KEEP THE ARTWORK CLEAR OF THE HEADLINE */
+@media(max-width:680px){
+  .hero{min-height:820px;padding-top:94px;padding-bottom:86px}
+  .hero-art{inset:108px -8% auto 8%;height:370px;opacity:.64}
+  .hero-art-vignette{background:radial-gradient(ellipse at 60% 45%,transparent 4%,rgba(11,9,8,.16) 48%,#0b0908 100%)}
+  .hero-image-wash{opacity:.45}
+  .hero-copy{margin-top:255px;position:relative;z-index:4}
+  .hero-kicker{margin-top:24px}
+  .hero h1{font-size:clamp(58px,13.6vw,78px);line-height:.94;letter-spacing:-.075em}
+  .hero-description{max-width:330px;font-size:12px;line-height:1.75}
+  .hero-footnote{margin-top:34px}
+  .hud-top{top:0;right:12%}
+  .hud-bottom{bottom:0;left:15%;right:12%}
+  .art-crosshair{top:43%;left:61%}
+}
+@media(max-width:380px){
+  .hero{min-height:790px}
+  .hero-copy{margin-top:238px}
+  .hero h1{font-size:58px}
+  .hero-actions{gap:14px}
+}
