@@ -296,3 +296,18 @@ footer{padding:30px 40px;position:relative}
   .proj-card{min-width:280px}
   .skills-grid{grid-template-columns:1fr}
 }
+
+
+/* ===== ACCESSIBILITY & TOUCH DEVICES ===== */
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+  #cursor, #cursorTrail { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
