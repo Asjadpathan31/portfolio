@@ -46,10 +46,9 @@ Then visit http://localhost:8000.
 | Project | Description | Source |
 |---|---|---|
 | EstateX Light | Real-estate platform with React frontend and Flask backend | [Repository](https://github.com/Asjadpathan31/EstateX-light) |
-| Smart College Complaint System | Complaint workflows, role-based access, dashboards, and MySQL reporting | [Repository](https://github.com/Asjadpathan31/SmartCollegeComplaint-system) |
 | FitTrack Pro | Fitness tracking project | [Repository](https://github.com/Asjadpathan31/fittrack-pro) |
 
-Project descriptions are intentionally concise. Verify the current feature set, setup steps, and deployment status in each source repository before relying on a demo.
+Only projects currently selected for the portfolio are listed here. Check each repository's README for setup requirements; source review is not a substitute for running the application.
 
 ## Contact
 
