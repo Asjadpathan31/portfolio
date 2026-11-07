@@ -325,3 +325,137 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .contact-actions .btn-prim, .contact-actions .btn-ghost { display: inline-flex; align-items: center; justify-content: center; }
 @media(max-width:700px) { .contact-actions > a { flex: 1 1 140px; } }
+
+
+/* ===== PHASE 3: EDITORIAL FUTURISTIC SYSTEM ===== */
+:root {
+  --accent: #7c6cff;
+  --accent2: #26d9c7;
+  --accent3: #a78bfa;
+  --glass: rgba(17, 22, 42, .68);
+  --glass-b: rgba(167, 139, 250, .16);
+  --card-sh: 0 18px 60px rgba(0, 0, 0, .22);
+  --card-sh-h: 0 24px 80px rgba(124, 108, 255, .18);
+}
+body {
+  background-image:
+    radial-gradient(ellipse at 12% 14%, rgba(124,108,255,.13), transparent 36%),
+    radial-gradient(ellipse at 88% 54%, rgba(38,217,199,.08), transparent 32%);
+}
+#bgCanvas { opacity: .48; }
+#header {
+  border-bottom: 1px solid transparent;
+  transition: background .3s, border-color .3s, box-shadow .3s;
+}
+#header.scrolled {
+  background: rgba(5, 8, 19, .82);
+  border-color: rgba(167,139,250,.14);
+  box-shadow: 0 12px 42px rgba(0,0,0,.22);
+  backdrop-filter: blur(18px);
+}
+.logo { letter-spacing: -.08em; }
+.logo .lb { color: var(--accent); }
+.hero-wrap { max-width: 1240px; }
+.hero-title {
+  letter-spacing: -.055em;
+  line-height: .98;
+  text-wrap: balance;
+}
+.hero-sub {
+  max-width: 560px;
+  line-height: 1.55;
+}
+.sec-inner { max-width: 1160px; }
+.sec-tag {
+  color: var(--accent2);
+  letter-spacing: .16em;
+}
+.sec-title {
+  letter-spacing: -.045em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+.glass-card {
+  border: 1px solid rgba(167,139,250,.15);
+  background: linear-gradient(145deg, rgba(22,27,49,.78), rgba(9,13,27,.72));
+  box-shadow: 0 16px 48px rgba(0,0,0,.16);
+  backdrop-filter: blur(16px);
+}
+.skill-card, .proj-card, .contact-form, .feedback-box {
+  border-radius: 22px;
+}
+.skill-card {
+  min-height: 170px;
+  padding: 26px;
+}
+.skill-tags span, .proj-tags span {
+  border: 1px solid rgba(167,139,250,.2);
+  background: rgba(124,108,255,.08);
+  border-radius: 999px;
+  padding: 6px 11px;
+}
+.proj-card {
+  min-height: 420px;
+  padding: 30px;
+  overflow: hidden;
+}
+.proj-title { line-height: 1.15; }
+.proj-desc { line-height: 1.65; }
+.proj-footer { margin-top: auto; }
+.proj-link {
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid rgba(167,139,250,.2);
+}
+.proj-link:hover {
+  border-color: var(--accent);
+  color: var(--accent2);
+}
+.contact-form, .feedback-box { padding: clamp(24px, 4vw, 40px); }
+.foot-inner { max-width: 1160px; }
+.menu-toggle { display: none; }
+@media (max-width: 1024px) {
+  #header { position: fixed; }
+  .menu-toggle {
+    display: flex;
+    width: 44px; height: 44px;
+    border: 1px solid var(--glass-b);
+    border-radius: 12px;
+    background: var(--glass);
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 5px;
+    cursor: pointer; z-index: 1002;
+  }
+  .menu-toggle span {
+    width: 18px; height: 2px; border-radius: 2px;
+    background: var(--text); transition: transform .25s, opacity .2s;
+  }
+  .menu-toggle.is-active span:first-child { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.is-active span:nth-child(2) { opacity: 0; }
+  .menu-toggle.is-active span:last-child { transform: translateY(-7px) rotate(-45deg); }
+  #nav {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 10px); left: 16px; right: 16px;
+    padding: 14px;
+    border: 1px solid var(--glass-b);
+    border-radius: 18px;
+    background: rgba(7, 10, 24, .96);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.38);
+    flex-direction: column; align-items: stretch; gap: 4px;
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .22s, transform .22s, visibility .22s;
+  }
+  #nav.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+  #nav .nl { padding: 13px 14px; border-radius: 10px; }
+  #nav .nl:hover, #nav .nl.active { background: rgba(124,108,255,.12); }
+}
+@media (max-width: 700px) {
+  .hero-title { font-size: clamp(2.8rem, 13vw, 5rem); }
+  .sec-title { font-size: clamp(2rem, 9vw, 3.4rem); }
+  .proj-card { min-width: min(82vw, 340px); padding: 24px; }
+  .skill-card { min-height: 0; padding: 22px; }
+  .foot-inner { gap: 18px; text-align: center; }
+  .foot-links { justify-content: center; }
+}

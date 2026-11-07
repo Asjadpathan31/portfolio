@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initReveal();
     initSlider();
     initNav();
+    initMobileNav();
   }
 
   // ==================== CURSOR ====================
@@ -217,6 +218,30 @@ document.addEventListener("DOMContentLoaded", () => {
       if (music.paused) { music.play().catch(() => {}); musicBtn.textContent = "🔇"; }
       else { music.pause(); musicBtn.textContent = "🔊"; }
     });
+  }
+
+
+  // ==================== MOBILE NAVIGATION ====================
+  function initMobileNav() {
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("nav");
+    if (!toggle || !nav) return;
+    const close = () => {
+      nav.classList.remove("is-open");
+      toggle.classList.remove("is-active");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+    };
+    toggle.addEventListener("click", () => {
+      const open = !nav.classList.contains("is-open");
+      nav.classList.toggle("is-open", open);
+      toggle.classList.toggle("is-active", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", close));
+    document.addEventListener("keydown", event => { if (event.key === "Escape") close(); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) close(); });
   }
 
 
