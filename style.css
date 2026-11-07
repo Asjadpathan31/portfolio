@@ -311,3 +311,17 @@ footer{padding:30px 40px;position:relative}
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* ===== PHASE 2: POLISHED INTERACTIONS ===== */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+a, button { -webkit-tap-highlight-color: transparent; }
+.proj-card { transform-style: preserve-3d; backface-visibility: hidden; }
+@media (hover: hover) and (pointer: fine) {
+  .proj-card:hover { transform: translateY(-8px) rotateX(1.2deg) rotateY(-1.2deg); }
+  .skill-card { transition: transform .35s var(--ease), border-color .35s, box-shadow .35s; }
+  .skill-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: var(--card-sh-h); }
+}
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.contact-actions .btn-prim, .contact-actions .btn-ghost { display: inline-flex; align-items: center; justify-content: center; }
+@media(max-width:700px) { .contact-actions > a { flex: 1 1 140px; } }
