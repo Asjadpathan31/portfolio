@@ -49,11 +49,14 @@ Then visit http://localhost:8000.
 | Smart College Complaint System | Complaint workflows, role-based access, dashboards, and MySQL reporting | [Repository](https://github.com/Asjadpathan31/SmartCollegeComplaint-system) |
 | FitTrack Pro | Fitness tracking project | [Repository](https://github.com/Asjadpathan31/fittrack-pro) |
 
-Project details and current implementation should be verified in each source repository.
+Project descriptions are intentionally concise. Verify the current feature set, setup steps, and deployment status in each source repository before relying on a demo.
 
 ## Contact
 
-For collaboration and project discussions, connect through [GitHub](https://github.com/Asjadpathan31).
+- GitHub: https://github.com/Asjadpathan31
+- LinkedIn: https://www.linkedin.com/in/asjad-pathan/
+
+For collaboration, internships, or project discussions, reach out through either profile.
 
 ---
 
