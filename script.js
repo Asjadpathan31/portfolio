@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded",function(){
     addEventListener("scroll",()=>{scroll=Math.min(1,scrollY/Math.max(1,innerHeight));},{passive:true});
     const resize=()=>{const w=canvas.clientWidth||innerWidth,h=canvas.clientHeight||innerHeight;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<700?1.35:1.8));};
     new ResizeObserver(resize).observe(canvas);resize();
-    const clock=new THREE.Clock();let frame=0;
-    function animate(){requestAnimationFrame(animate);const t=clock.getElapsedTime();mouseX+=(targetX-mouseX)*.035;mouseY+=(targetY-mouseY)*.035;
+    const clock=new THREE.Clock();
+    renderer.setAnimationLoop(()=>{
+      const t=clock.getElapsedTime();mouseX+=(targetX-mouseX)*.035;mouseY+=(targetY-mouseY)*.035;
       root.rotation.y=t*.12+mouseX;root.rotation.x=Math.sin(t*.22)*.12+mouseY*.35;root.position.y=Math.sin(t*.55)*.12-scroll*.5;
       core.rotation.x=t*.18;core.rotation.z=t*.13;inner.rotation.y=-t*.22;inner.rotation.x=t*.17;wire.rotation.y=-t*.07;wire.rotation.x=t*.05;
       rings.forEach((r,n)=>{r.rotation.z+=.0015*(n+1);r.rotation.x+=.0008;});
       particles.rotation.y=t*.012;particles.rotation.x=Math.sin(t*.08)*.04;stars.rotation.y=-t*.025;
-      camera.position.x=mouseX*.42;camera.position.y=-mouseY*.35;camera.lookAt(0,0,0);renderer.render(scene,camera);frame++;
-    }animate();
-    document.addEventListener("visibilitychange",()=>{if(document.hidden)renderer.setAnimationLoop(null);else renderer.setAnimationLoop(()=>{const t=clock.getElapsedTime();root.rotation.y=t*.12+mouseX;root.rotation.x=Math.sin(t*.22)*.12+mouseY*.35;core.rotation.x=t*.18;core.rotation.z=t*.13;inner.rotation.y=-t*.22;wire.rotation.y=-t*.07;particles.rotation.y=t*.012;stars.rotation.y=-t*.025;camera.lookAt(0,0,0);renderer.render(scene,camera);});});
+      camera.position.x=mouseX*.42;camera.position.y=-mouseY*.35;camera.lookAt(0,0,0);renderer.render(scene,camera);
+    });
   }).catch(err=>{console.warn("3D scene unavailable; keeping CSS fallback.",err);});
 });
