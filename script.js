@@ -22,9 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTyping();
     initReveal();
     initSlider();
-    initForm();
     initNav();
-    loadFeedback();
   }
 
   // ==================== CURSOR ====================
