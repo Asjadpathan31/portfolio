@@ -1,75 +1,60 @@
-<div align="center">
+# Asjad Pathan — Developer Portfolio
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=180&section=header&text=My%20Portfolio&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Personal%20Developer%20Portfolio%20✨&descAlignY=60&descSize=18&descColor=a78bfa"/>
+Personal portfolio website for **Asjad Afzal Pathan**, focused on full-stack development and practical AI engineering.
 
-<br/>
+> Building intelligent products. Engineering real-world solutions.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+## Live site
 
-</div>
+- Portfolio: https://asjadpathan31.github.io/portfolio/
+- GitHub: https://github.com/Asjadpathan31
 
----
+## Built with
 
-## ✨ About This Portfolio
+- HTML5
+- CSS3 (responsive layouts, visual effects, and animations)
+- Vanilla JavaScript
+- Canvas API for the animated background
 
-My **personal developer portfolio** — a clean, modern, and fully responsive website showcasing my skills, projects, and contact information. Designed to make a great first impression on recruiters and collaborators.
+## Highlights
 
-> 🚀 Built with passion. Designed with purpose.
+- Responsive single-page portfolio
+- Animated space-inspired visual system
+- About, skills, selected projects, and contact sections
+- Project links to source repositories
+- Reduced-motion and accessibility improvements are part of the ongoing refinement roadmap
 
----
+## Run locally
 
-## 🎯 What's Inside
-
-- 👋 **Hero Section** — Eye-catching introduction with animated text
-- 🧑‍💻 **About Me** — Skills, background, and what I do
-- 🛠️ **Projects** — Showcasing my best work with live demos
-- 📊 **Skills** — Visual tech stack display
-- 📬 **Contact** — Easy ways to reach me
-
----
-
-## 🛠️ Built With
-
-| Technology | Purpose |
-|-----------|---------|
-| HTML5 | Structure & Markup |
-| CSS3 | Styling & Animations |
-| JavaScript | Interactivity |
-
----
-
-## 🚀 View Portfolio
+No build step is required.
 
 ```bash
-# Clone the repo
 git clone https://github.com/Asjadpathan31/portfolio.git
 cd portfolio
-
-# Open in browser
-open index.html
-# OR just drag index.html into your browser
 ```
 
+Open `index.html` in a browser, or use a local static server:
+
+```bash
+python -m http.server 8000
+```
+
+Then visit http://localhost:8000.
+
+## Selected projects
+
+| Project | Description | Source |
+|---|---|---|
+| EstateX Light | Real-estate platform with React frontend and Flask backend | [Repository](https://github.com/Asjadpathan31/EstateX-light) |
+| Smart College Complaint System | Complaint workflows, role-based access, dashboards, and MySQL reporting | [Repository](https://github.com/Asjadpathan31/SmartCollegeComplaint-system) |
+| FitTrack Pro | Fitness tracking project | [Repository](https://github.com/Asjadpathan31/fittrack-pro) |
+
+Project details and current implementation should be verified in each source repository.
+
+## Contact
+
+For collaboration and project discussions, connect through [GitHub](https://github.com/Asjadpathan31).
+
 ---
 
-## 📸 Features
-
-- ✅ Fully responsive (mobile + tablet + desktop)
-- ✅ Smooth scroll animations
-- ✅ Clean & modern design
-- ✅ Fast loading — no frameworks needed
-- ✅ Easy to customize
-
----
-
-## 👨‍💻 About Me
-
-I'm **Asjad Pathan**, a passionate Full Stack Developer who loves building web apps that are both functional and beautiful.
-
-[![GitHub](https://img.shields.io/badge/GitHub-Asjadpathan31-181717?style=for-the-badge&logo=github)](https://github.com/Asjadpathan31)
-
----
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer"/>
+© Asjad Afzal Pathan
