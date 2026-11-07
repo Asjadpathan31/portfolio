@@ -219,39 +219,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==================== FORM ====================
-  function initForm() {
-    const form = document.getElementById("feedbackForm");
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const name = document.getElementById("cName");
-      const email = document.getElementById("cEmail");
-      const msg = document.getElementById("cMsg");
-      let valid = true;
-      ["nameErr","emailErr","msgErr"].forEach(id => document.getElementById(id).textContent = "");
-      [name, email, msg].forEach(el => el.classList.remove("err"));
-      if (!name.value.trim()) { document.getElementById("nameErr").textContent = "// NAME REQUIRED"; name.classList.add("err"); valid = false; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { document.getElementById("emailErr").textContent = "// VALID EMAIL REQUIRED"; email.classList.add("err"); valid = false; }
-      if (!msg.value.trim()) { document.getElementById("msgErr").textContent = "// MESSAGE REQUIRED"; msg.classList.add("err"); valid = false; }
-      if (!valid) return;
-      const fb = { name: name.value.trim(), message: msg.value.trim(), time: new Date().toLocaleDateString("en-IN") };
-      let fbs = safeGet(); fbs.unshift(fb); localStorage.setItem("ap_feedbacks", JSON.stringify(fbs));
-      document.getElementById("successMsg").textContent = "🚀 MESSAGE LAUNCHED INTO THE GALAXY!";
-      setTimeout(() => document.getElementById("successMsg").textContent = "", 3500);
-      form.reset(); loadFeedback();
-    });
-  }
-
-  function safeGet() { try { return JSON.parse(localStorage.getItem("ap_feedbacks")) || []; } catch { return []; } }
-  function esc(s) { return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-
-  function loadFeedback() {
-    const fbs = safeGet();
-    const list = document.getElementById("fbList");
-    const count = document.getElementById("fbCount");
-    count.textContent = fbs.length;
-    if (!fbs.length) { list.innerHTML = '<p class="no-fb">// NO MESSAGES YET. BE THE FIRST.</p>'; return; }
-    list.innerHTML = fbs.map(f => `<div class="fb-item"><h4>👤 ${esc(f.name)} <span style="font-size:9px;color:var(--muted)">${f.time||""}</span></h4><p>${esc(f.message)}</p></div>`).join("");
-  }
 
 });
