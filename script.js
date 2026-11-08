@@ -15,6 +15,30 @@ document.addEventListener("DOMContentLoaded",function(){
   if(glow&&matchMedia("(pointer:fine)").matches){let x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;addEventListener("pointermove",e=>{x=e.clientX;y=e.clientY;glow.style.opacity="1";},{passive:true});const follow=()=>{cx+=(x-cx)*.12;cy+=(y-cy)*.12;glow.style.left=cx+"px";glow.style.top=cy+"px";requestAnimationFrame(follow);};follow();}
   const revealItems=document.querySelectorAll(".section-label,.section-heading,.skill-card,.project-row,.contact-panel,.intro-content");
   if("IntersectionObserver"in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:.12});revealItems.forEach(el=>{el.classList.add("reveal");observer.observe(el);});}
+
+  // Pointer-driven 3D tilt for project cards (touch and reduced-motion safe).
+  const projectCards=document.querySelectorAll(".project-row");
+  const finePointer=matchMedia("(hover:hover) and (pointer:fine)").matches;
+  const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(finePointer&&!reduceMotion){
+    projectCards.forEach(card=>{
+      card.addEventListener("pointermove",event=>{
+        const rect=card.getBoundingClientRect();
+        const px=(event.clientX-rect.left)/rect.width;
+        const py=(event.clientY-rect.top)/rect.height;
+        const tiltY=(px-.5)*10;
+        const tiltX=(.5-py)*8;
+        card.style.setProperty("--tilt-x",tiltX.toFixed(2)+"deg");
+        card.style.setProperty("--tilt-y",tiltY.toFixed(2)+"deg");
+        card.style.setProperty("--spot-x",(px*100).toFixed(1)+"%");
+        card.style.setProperty("--spot-y",(py*100).toFixed(1)+"%");
+      });
+      const reset=()=>{card.style.setProperty("--tilt-x","0deg");card.style.setProperty("--tilt-y","0deg");card.style.setProperty("--spot-x","50%");card.style.setProperty("--spot-y","50%");};
+      card.addEventListener("pointerleave",reset);
+      card.addEventListener("blur",reset,true);
+    });
+  }
+
   const canvas=document.getElementById("heroCanvas");
   if(!canvas||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   import("https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js").then(THREE=>{
