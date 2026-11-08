@@ -14,12 +14,15 @@ Personal portfolio website for **Asjad Afzal Pathan**, focused on full-stack dev
 - HTML5
 - CSS3 (responsive layouts, visual effects, and animations)
 - Vanilla JavaScript
-- Canvas API for the animated background
+- Three.js for the real-time 3D hero scene
+- CSS 3D transforms and pointer-driven project-card tilt
+- Vanilla JavaScript for interaction and motion
 
 ## Highlights
 
 - Responsive single-page portfolio
-- Animated space-inspired visual system
+- Animated Three.js hero scene with metallic 3D geometry
+- Pointer-responsive 3D project cards with depth and spotlight effects
 - About, skills, selected projects, and contact sections
 - Project links to source repositories
 - Reduced-motion and accessibility improvements are part of the ongoing refinement roadmap
