@@ -216,3 +216,21 @@ body:before{background:radial-gradient(ellipse at 78% 25%,rgba(239,89,49,.16),tr
  .project-row,.project-row:hover{transform:none;transition:transform .3s,border-color .3s,box-shadow .3s}
  .project-visual,.project-main,.project-arrow{transform:none}
 }
+
+/* Preserve scroll-reveal and pointer tilt together on project cards. */
+.project-row.reveal:not(.visible){
+  opacity:0;filter:blur(5px);
+  transform:perspective(1400px) translateY(34px) rotateX(0deg) rotateY(0deg);
+}
+.project-row.reveal.visible{
+  opacity:1;filter:none;
+  transform:perspective(1400px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));
+}
+.project-row.reveal.visible:hover{
+  transform:perspective(1400px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateY(-10px);
+}
+@media(hover:none),(prefers-reduced-motion:reduce){
+  .project-row.reveal:not(.visible),.project-row.reveal.visible,.project-row.reveal.visible:hover{
+    opacity:1;filter:none;transform:none;
+  }
+}
