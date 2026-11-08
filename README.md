@@ -1,25 +1,30 @@
-# Asjad Pathan — Digital Systems Portfolio
+# Asjad Pathan — Developer Portfolio
 
-Personal portfolio for Asjad Afzal Pathan, a B.Tech Computer Science student focused on full-stack engineering and exploring applied AI.
+Personal portfolio for Asjad Afzal Pathan, a B.Tech Computer Science student at GH Raisoni International Skill Tech University, Pune (graduating 2028). Focused on full-stack engineering and exploring applied AI.
 
-Live: https://asjadpathan31.github.io/portfolio/
+**Live site:** https://asjadpathan31.github.io/portfolio/
 
-## Experience
-- Pointer-reactive 3D particle field rendered with Canvas 2D projection
-- High-contrast graphite / acid-lime art direction
-- Custom CSS product-interface illustrations for featured projects
-- Scroll-triggered reveals, responsive navigation and reduced-motion support
-- Lightweight static HTML, CSS and vanilla JavaScript; no build step
+## Design & experience
+- Original dark, atmospheric interface with cyan / electric-blue visual identity
+- Animated orbital hero composition with pointer-reactive parallax
+- Ambient canvas particle network
+- Custom CSS-built project interface illustrations
+- Scroll reveals, responsive mobile navigation and reduced-motion support
+- Semantic HTML, responsive CSS and vanilla JavaScript; no build step or framework dependency
 
-## Selected work
-- [EstateX Light](https://github.com/Asjadpathan31/EstateX-light)
-- [FitTrack Pro](https://github.com/Asjadpathan31/fittrack-pro)
+## Featured projects
+- [EstateX Light](https://github.com/Asjadpathan31/EstateX-light) — React + Flask property discovery application
+- [FitTrack Pro](https://github.com/Asjadpathan31/fittrack-pro) — fitness tracking application
 
-Project visuals are illustrative representations, not screenshots of deployed production apps. See the repositories for source and setup instructions.
+Project artwork is illustrative and is not presented as a live product screenshot. Refer to each repository for its source code, setup instructions and current implementation status.
 
 ## Run locally
-Open `index.html` or run `python -m http.server 8000` and visit http://localhost:8000.
+Open `index.html` in a browser, or run:
+```bash
+python -m http.server 8000
+```
+Then visit http://localhost:8000.
 
-## Connect
+## Links
 - [GitHub](https://github.com/Asjadpathan31)
 - [LinkedIn](https://www.linkedin.com/in/asjad-pathan/)
