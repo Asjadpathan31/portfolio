@@ -1,42 +1,30 @@
 # Asjad Pathan — Developer Portfolio
 
-Personal portfolio website for **Asjad Afzal Pathan**, focused on full-stack development and practical AI engineering.
-
-> Building intelligent products. Engineering real-world solutions.
+Personal portfolio for Asjad Afzal Pathan, a Computer Science student exploring full-stack development and practical AI.
 
 ## Live site
 
-- Portfolio: https://asjadpathan31.github.io/portfolio/
-- GitHub: https://github.com/Asjadpathan31
+https://asjadpathan31.github.io/portfolio/
 
 ## Built with
 
-- HTML5
-- CSS3 (responsive layouts, visual effects, and animations)
+- Semantic HTML
+- Responsive CSS and custom visual artwork
 - Vanilla JavaScript
-- Three.js for the real-time 3D hero scene
-- CSS 3D transforms and pointer-driven project-card tilt
-- Vanilla JavaScript for interaction and motion
+- Canvas particle animation (no 3D framework dependency)
 
-## Highlights
+## Features
 
-- Responsive single-page portfolio
-- Animated Three.js hero scene with metallic 3D geometry
-- Pointer-responsive 3D project cards with depth and spotlight effects
-- About, skills, selected projects, and contact sections
-- Project links to source repositories
-- Reduced-motion fallbacks and keyboard focus states are included
+- Interactive particle field in the hero
+- Responsive portrait stage and subtle pointer interaction
+- Project case studies for EstateX Light and FitTrack Pro
+- Skill workbench, profile, principles and contact sections
+- Mobile navigation, scroll reveals and reduced-motion support
+- No build step or package installation required
 
 ## Run locally
 
-No build step is required.
-
-```bash
-git clone https://github.com/Asjadpathan31/portfolio.git
-cd portfolio
-```
-
-Open `index.html` in a browser, or use a local static server:
+Clone the repository and open `index.html`, or start a local server:
 
 ```bash
 python -m http.server 8000
@@ -46,20 +34,14 @@ Then visit http://localhost:8000.
 
 ## Selected projects
 
-| Project | Description | Source |
-|---|---|---|
-| EstateX Light | Real-estate platform with React frontend and Flask backend | [Repository](https://github.com/Asjadpathan31/EstateX-light) |
-| FitTrack Pro | Fitness tracking project | [Repository](https://github.com/Asjadpathan31/fittrack-pro) |
+- [EstateX Light](https://github.com/Asjadpathan31/EstateX-light)
+- [FitTrack Pro](https://github.com/Asjadpathan31/fittrack-pro)
 
-Only projects currently selected for the portfolio are listed here. Check each repository's README for setup requirements; source review is not a substitute for running the application.
+Project artwork on the portfolio is illustrative interface artwork; it is not presented as proof of a live deployment. Check each repository for source code and setup instructions.
 
-## Contact
+## Connect
 
-- GitHub: https://github.com/Asjadpathan31
-- LinkedIn: https://www.linkedin.com/in/asjad-pathan/
-
-For collaboration, internships, or project discussions, reach out through either profile.
-
----
+- [GitHub](https://github.com/Asjadpathan31)
+- [LinkedIn](https://www.linkedin.com/in/asjad-pathan/)
 
 © Asjad Afzal Pathan
