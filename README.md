@@ -5,9 +5,9 @@ Personal portfolio for Asjad Afzal Pathan, a B.Tech Computer Science student foc
 Live site: https://asjadpathan31.github.io/portfolio/
 
 ## Design & implementation
-- Dark, futuristic visual system with electric cyan and violet accents
-- Custom CSS/SVG-inspired interface artwork for featured projects
-- Canvas-based animated network background
+- Dark futuristic visual system with electric cyan and violet accents
+- Custom CSS interface artwork for featured projects
+- Canvas-based animated neural network background
 - CSS orbital core, glow, signal and motion effects
 - Responsive navigation and layouts
 - Scroll-triggered reveals and reduced-motion support
