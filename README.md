@@ -25,7 +25,7 @@ Personal portfolio website for **Asjad Afzal Pathan**, focused on full-stack dev
 - Pointer-responsive 3D project cards with depth and spotlight effects
 - About, skills, selected projects, and contact sections
 - Project links to source repositories
-- Reduced-motion and accessibility improvements are part of the ongoing refinement roadmap
+- Reduced-motion fallbacks and keyboard focus states are included
 
 ## Run locally
 
