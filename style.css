@@ -182,3 +182,37 @@ body:before{background:radial-gradient(ellipse at 78% 25%,rgba(239,89,49,.16),tr
 .project-main p{min-height:64px}
 .project-tags{row-gap:7px}
 .work-note{font:9px var(--mono);line-height:1.8;letter-spacing:.7px;color:#a99b8f;margin-top:24px;max-width:720px}
+
+
+/* INTERACTIVE 3D PROJECT DECK */
+.project-list{perspective:1600px;perspective-origin:50% 42%;gap:clamp(18px,2.4vw,30px)}
+.project-row{
+  --tilt-x:0deg;--tilt-y:0deg;--spot-x:50%;--spot-y:50%;
+  position:relative;transform-style:preserve-3d;backface-visibility:hidden;
+  transform:perspective(1400px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  will-change:transform;transition:transform .18s ease-out,border-color .35s,box-shadow .35s;
+  background:
+    radial-gradient(360px circle at var(--spot-x) var(--spot-y),rgba(255,174,119,.13),transparent 46%),
+    linear-gradient(160deg,#241911,#100d0b 72%);
+}
+.project-row:hover{
+  transform:perspective(1400px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-10px);
+  box-shadow:0 35px 85px rgba(0,0,0,.48),0 0 0 1px rgba(255,171,120,.08);
+}
+.project-visual{transform:translateZ(25px);transform-style:preserve-3d}
+.project-visual img{transform:translateZ(10px) scale(1.015)}
+.project-row:hover .project-visual img{transform:translateZ(18px) scale(1.075)}
+.project-main{transform:translateZ(32px)}
+.project-type,.project-main h3,.project-main p,.project-tags{position:relative}
+.project-arrow{transform:translateZ(42px)}
+.project-row:after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:linear-gradient(120deg,rgba(255,255,255,.12),transparent 24%,transparent 70%,rgba(255,255,255,.04));
+  mix-blend-mode:screen;
+}
+.project-row:hover:after{opacity:1}
+.project-row:focus-within{outline:1px solid rgba(255,171,120,.65);outline-offset:4px}
+@media(hover:none),(prefers-reduced-motion:reduce){
+ .project-row,.project-row:hover{transform:none;transition:transform .3s,border-color .3s,box-shadow .3s}
+ .project-visual,.project-main,.project-arrow{transform:none}
+}
